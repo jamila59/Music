@@ -1,0 +1,14 @@
+@using Music.Models;
+
+<h3>Here are all the items in this category:</h3>
+
+<ol>
+@foreach (Artist artist in @Model["artist"])
+{
+  <li><a href='/record/@Model["record"].Id/artist/@artist.Id'>@artist.ArtistName</a></li>
+}
+</ol>
+
+<p><a href='/record/@Model["record"].Id/artist/new'>Add a new item</a></p>
+<p><a href='/record'>Return to category list</a></p>
+<p><a href='/'>Return to Main Page</a></p>
